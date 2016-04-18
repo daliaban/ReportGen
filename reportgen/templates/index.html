@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!-- without previous line, IE does not display bootstrap with a good will! -->
+{%from 'widgets.html' import reports_view_tmpl, ContentTable  %}
+{{ContentTable()}}
+<html>
+  <head>
+    <script src="{{url_for('static', filename='js_scripts/lib/jquery-1.11.0.min.js')}}" type="text/javascript"></script>
+    <script src="{{url_for('static', filename='js_scripts/lib/underscore-1.6.0.min.js')}}" type="text/javascript"></script>
+    <script src="{{url_for('static', filename='js_scripts/lib/backbone-1.1.2.min.js')}}" type="text/javascript"></script>
+    <script src="{{url_for('static', filename='js_scripts/lib/backbone.flaskrestless.min.js')}}" type="text/javascript"></script>
+    <link href="style_sheets/lib/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class="text-center">
+        <h4>Generate Report</h4>
+      </div>
+      <div class="control-group">
+        <div id="allreports">
+          {{reports_view_tmpl()}}
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="{{url_for('static', filename='js_scripts')}}/reportgen.report.js" type="text/javascript"></script>
+</html>

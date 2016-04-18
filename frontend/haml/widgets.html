@@ -1,0 +1,31 @@
+{%macro ContentTable()%}
+%script#ContentTable{:type => "text/template"}
+    %td [[= id ]]
+    %td [[= organization ]]
+    %td [[= reported_at ]]
+    %td [[= created_at ]]
+    %td
+        %form(id="pdfform[[= id ]]" action="" method="post")
+            %input(type="hidden" name="type" value="pdf")
+            %button(id="pdfgen" class="submit")Generate PDF Report
+        %br
+        %form(id="xmlform[[= id ]]" action="" method="post")
+            %input(type="hidden" name="type" value="xml")
+            %button(id="xmlgen" class="submit")Generate XML Report
+{%endmacro%}
+
+{%macro reports_view_tmpl()%}
+<table id="reqtable" class="table table-bordered">
+<thead class="highlight-b">
+<tr>
+<th>ID</th>
+<th>Organization</th>
+<th>Reported At</th>
+<th>Created At</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody class="table-hover">
+</tbody>
+</table>
+{%endmacro%}

@@ -1,0 +1,36 @@
+README
+
+reportgen: A Flask application to create REST APIs and generate PDF and XML reports from data
+
+Installations steps (on Linux and OS X systems)
+
+1. Create a virtual env
+
+virtualenv --no-site-packages venv
+
+2. Activate it
+
+. venv/bin/active
+
+3. Install the application
+
+python setup.py install
+
+4. Please make sure node.js is installed and npm is avaiable
+
+5. Install dependencies
+
+npm install
+
+6. Run application
+
+grunt serve
+
+7. For testing
+
+pip install `cat test-requirements.txt`
+
+8. Run test
+
+lettuce
+

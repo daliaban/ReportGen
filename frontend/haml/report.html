@@ -1,0 +1,47 @@
+%html
+    %head
+        %style(type="text/css")
+            @page {
+            size: a4 portrait;
+            margin: 2cm;
+            @frame title_frame {
+            \-pdf-frame-content: title_content;
+            left: 250pt;
+            width: 300pt;
+            top: 50pt;
+            height: 30pt;
+            }
+            @frame table_frame {
+            \-pdf-frame-content: table_content;
+            left: 350pt; width: 100pt; top: 100pt; height: 50pt;
+            }
+            @frame list_frame {
+            \-pdf-frame-content: list_content;
+            left: 250pt; width: 300pt; top: 250pt; height: 200pt;
+            }
+            }
+
+    %body
+        %div
+            %div#title_content
+                %h1 The Report
+            %div#table_content
+                %table
+                    %tr
+                        %td Organization: {{content.organization}}
+                    %tr
+                        %td Reported: {{content.reported_at}}
+                    %tr
+                        %td Created: {{content.created_at}}
+
+            %div#list_content
+                %h4 Inventory
+                %ul
+                    {% for item in content.inventory  %}
+                    %li
+                        {{item.name}}: {{item.price}}
+                    {% endfor %}
+
+
+
+
